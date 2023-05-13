@@ -1,0 +1,15 @@
+<html>
+  <head></head>
+  <body></body>
+  <script>
+    const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws'
+    const ws = new WebSocket(`${protocol}://${window.location.host}`)
+    ws.onmessage = (event) => {
+      console.log(event.data)
+      // const data = JSON.parse(event.data)
+      // if (data.type === 'reload') {
+      //   window.location.reload()
+      // }
+    }
+  </script>
+</html>
